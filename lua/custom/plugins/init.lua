@@ -5,4 +5,5 @@
 return {
 	require 'kickstart.plugins.autoformat',
 	require 'kickstart.plugins.debug',
+	require 'custom.plugins.fold',
 }
