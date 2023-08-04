@@ -288,6 +288,36 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
+-- Terminal mappings
+-- Jump to terminal quicker
+vim.api.nvim_set_keymap('n', '<Leader>c', ':terminal<CR>', { noremap = true })
+-- Back to normal mode quicker in terminal
+vim.api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-n>', { noremap = true })
+vim.api.nvim_set_keymap('t', 'jj', '<C-\\><C-n>', { noremap = true })
+vim.api.nvim_set_keymap('t', 'jJ', '<C-\\><C-n>', { noremap = true })
+vim.api.nvim_set_keymap('t', 'Jj', '<C-\\><C-n>', { noremap = true })
+vim.api.nvim_set_keymap('t', 'JJ', '<C-\\><C-n>', { noremap = true })
+vim.api.nvim_set_keymap('t', 'jk', '<C-\\><C-n>', { noremap = true })
+vim.api.nvim_set_keymap('t', 'jK', '<C-\\><C-n>', { noremap = true })
+vim.api.nvim_set_keymap('t', 'Jk', '<C-\\><C-n>', { noremap = true })
+vim.api.nvim_set_keymap('t', 'JK', '<C-\\><C-n>', { noremap = true })
+
+-- Mappings for quick exit insert mode
+vim.api.nvim_set_keymap('i', 'jj', '<Esc>', { noremap = true })
+vim.api.nvim_set_keymap('i', 'jJ', '<Esc>', { noremap = true })
+vim.api.nvim_set_keymap('i', 'Jj', '<Esc>', { noremap = true })
+vim.api.nvim_set_keymap('i', 'JJ', '<Esc>', { noremap = true })
+vim.api.nvim_set_keymap('i', 'jk', '<Esc>', { noremap = true })
+vim.api.nvim_set_keymap('i', 'jK', '<Esc>', { noremap = true })
+vim.api.nvim_set_keymap('i', 'Jk', '<Esc>', { noremap = true })
+vim.api.nvim_set_keymap('i', 'JK', '<Esc>', { noremap = true })
+
+-- Tabs quicker
+vim.api.nvim_set_keymap('n', '<C-t>', ':tabnew<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-c>', ':tabclose<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-[>', ':tabprevious<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-]>', ':tabnext<CR>', { noremap = true, silent = true })
+
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
