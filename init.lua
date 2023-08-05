@@ -318,6 +318,11 @@ vim.api.nvim_set_keymap('n', '<C-c>', ':tabclose<CR>', { noremap = true, silent 
 vim.api.nvim_set_keymap('n', '<C-[>', ':tabprevious<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-]>', ':tabnext<CR>', { noremap = true, silent = true })
 
+vim.o.backspace = '2'    -- Make backspace not behave all retarded-like
+
+vim.o.colorcolumn = '80' -- Highlight 80 character limit
+vim.o.ruler = true       -- Show the line number and column in the status bar
+
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
